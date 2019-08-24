@@ -15,7 +15,7 @@ import com.ncrm.service.LoginService;
 public class LoginController {
 	
 /*
- *	web - 1
+ *	eclipse - 1
  * 
  */
 
