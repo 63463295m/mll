@@ -16,7 +16,7 @@ public class LoginController {
 	
 /*
  *	eclipse - 1
- * 
+ *  idea - 1
  */
 
 	@Autowired

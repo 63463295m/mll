@@ -3,6 +3,11 @@ package com.ncrm.dao;
 import com.ncrm.entity.Classes;
 
 public interface ClassesMapper {
+    /**
+     *
+     * @param id
+     * @return
+     */
     int deleteByPrimaryKey(Integer id);
 
     int insert(Classes record);
