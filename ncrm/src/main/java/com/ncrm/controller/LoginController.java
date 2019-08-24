@@ -13,8 +13,12 @@ import com.ncrm.service.LoginService;
 @Controller
 @RequestMapping(value="/loginController")
 public class LoginController {
-/** web - 1
-*/
+	
+/*
+ *	web - 1
+ * 
+ */
+
 	@Autowired
 	private LoginService loginService;
 
