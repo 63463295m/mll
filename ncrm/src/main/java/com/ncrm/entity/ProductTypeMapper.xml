@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ncrm.dao.ProductTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.ncrm.entity.ProductType" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="proTypeName" property="proTypeName" jdbcType="VARCHAR" />
+    <result column="proTypeDesc" property="proTypeDesc" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="loginId" property="loginId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, proTypeName, proTypeDesc, status, loginId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from producttype
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from producttype
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ncrm.entity.ProductType" >
+    insert into producttype (id, proTypeName, proTypeDesc, 
+      status, loginId)
+    values (#{id,jdbcType=INTEGER}, #{proTypeName,jdbcType=VARCHAR}, #{proTypeDesc,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{loginId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncrm.entity.ProductType" >
+    insert into producttype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="proTypeName != null" >
+        proTypeName,
+      </if>
+      <if test="proTypeDesc != null" >
+        proTypeDesc,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="loginId != null" >
+        loginId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="proTypeName != null" >
+        #{proTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="proTypeDesc != null" >
+        #{proTypeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="loginId != null" >
+        #{loginId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncrm.entity.ProductType" >
+    update producttype
+    <set >
+      <if test="proTypeName != null" >
+        proTypeName = #{proTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="proTypeDesc != null" >
+        proTypeDesc = #{proTypeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="loginId != null" >
+        loginId = #{loginId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncrm.entity.ProductType" >
+    update producttype
+    set proTypeName = #{proTypeName,jdbcType=VARCHAR},
+      proTypeDesc = #{proTypeDesc,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      loginId = #{loginId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

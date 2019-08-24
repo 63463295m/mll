@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ncrm.dao.ProductsMapper" >
+  <resultMap id="BaseResultMap" type="com.ncrm.entity.Products" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="productName" property="productName" jdbcType="VARCHAR" />
+    <result column="productDesc" property="productDesc" jdbcType="VARCHAR" />
+    <result column="photo" property="photo" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, productName, productDesc, photo
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from products
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from products
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ncrm.entity.Products" >
+    insert into products (id, productName, productDesc, 
+      photo)
+    values (#{id,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{productDesc,jdbcType=VARCHAR}, 
+      #{photo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncrm.entity.Products" >
+    insert into products
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="productName != null" >
+        productName,
+      </if>
+      <if test="productDesc != null" >
+        productDesc,
+      </if>
+      <if test="photo != null" >
+        photo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productDesc != null" >
+        #{productDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        #{photo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncrm.entity.Products" >
+    update products
+    <set >
+      <if test="productName != null" >
+        productName = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productDesc != null" >
+        productDesc = #{productDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        photo = #{photo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncrm.entity.Products" >
+    update products
+    set productName = #{productName,jdbcType=VARCHAR},
+      productDesc = #{productDesc,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
