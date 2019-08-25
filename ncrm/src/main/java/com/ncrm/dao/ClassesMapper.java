@@ -5,8 +5,8 @@ import com.ncrm.entity.Classes;
 public interface ClassesMapper {
     /**
      *web - 1
-     * @param id
-     * @return
+     * 
+     * Local - eclipse - 1
      */
     int deleteByPrimaryKey(Integer id);
 
