@@ -15,7 +15,8 @@ import com.ncrm.service.LoginService;
 public class LoginController {
 	
 /*
- *	Local - 1
+ *	Local -dev_3 - 1
+ *	eclipse - 1
  *  
  */
 
