@@ -15,8 +15,8 @@ import com.ncrm.service.LoginService;
 public class LoginController {
 	
 /*
- *	eclipse - 1
- *  idea - 3
+ *	Local - 1
+ *  
  */
 
 	@Autowired
