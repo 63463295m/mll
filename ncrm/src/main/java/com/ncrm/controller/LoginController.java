@@ -17,7 +17,7 @@ public class LoginController {
 /*
  *	
  *
- *	local - master - login - 3
+ *	local - master - login - 4
  *  
  */
 
@@ -29,8 +29,8 @@ public class LoginController {
 	public String index(Model m){
 		
 		Login login = loginService.selectLoginById(1);
-		
-		m.addAttribute("login", login);
+		String str = "abc...";
+		m.addAttribute("login", login).addAttribute("str", str);
 		return "index";
 	}
 

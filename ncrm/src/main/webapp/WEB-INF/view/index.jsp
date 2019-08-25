@@ -18,5 +18,10 @@
 <label>
 	<input type="checkbox" value="1" />深圳 <br>
 </label>
+<label>
+	<input type="checkbox" value="1" />西安 <br>
+</label>
+path->${path}; <br>
+str ->${str};
 </body>
 </html>
