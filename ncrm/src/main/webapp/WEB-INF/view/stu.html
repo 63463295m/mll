@@ -1,0 +1,81 @@
+<!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Html练习页面</title>
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+</head>
+<style>
+ul#tabNav{
+width: 400px;list-style: none;border-bottom: solid 1px green;margin: 0;
+padding-left: 0;padding-bottom: 0;
+}
+ul#tabNav li{
+float: left;height: 25px;margin: 0 10px -2px 0;color: black;border: solid 1px green;
+border-bottom: 0;padding: 0;
+}
+#tabNav a:link,#tabNav a:visited{
+display: block;text-decoration: none;padding: 5px 10px 3px 10px;
+}
+#tabContent{
+	width: 400px;height: 200px;border: solid 1px green;border-top-width: 0;
+}
+li.tabSelected{
+	background-color: #ffcc00;color: #ffffff;
+}
+div#tabContent > div{
+	display: none;
+}
+div#tabContent .curr{
+	display: block;
+}
+</style>
+
+<body>
+	<div class="container">
+		<div class="row">
+				<ul id="tabNav">
+					<li onclick="Mao.show(1)" id='tab1' class="tabSelected">
+						<a href='javascript:;' _fcksavedurl='#'>新聞</a>
+					</li>
+					<li onclick="Mao.show(2)" id='tab2' class="">
+						<a href='javascript:;' _fcksavedurl='#'>体育</a>
+					</li>
+					<li onclick="Mao.show(3)" id='tab3' class="">
+						<a href='javascript:;' _fcksavedurl='#'>娱乐</a>
+					</li>
+				</ul>
+
+				<div id="tabContent">
+					<div class="curr" id="content1">新闻内容</div>
+					<div class="" id="content2">体育内容</div>
+					<div class="" id="content3">娱乐内容</div>
+				</div>
+
+		</div>
+	</div>
+	
+		<table>
+		<thead>表格头</thead>
+			<tr>
+				<th>Column 1 Heading</th>
+				<th>Column 2 Heading</th>
+			</tr>
+			<tr>
+				<td>Row 1: Col 1</td>
+				<td>Row 1: Col 2</td>
+			</tr>
+		</table>
+
+
+
+	<script src="./bootstrap/js/jquery-1.9.1.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+<script>
+	fun
+</script>
+
+</body>
+
+</html>

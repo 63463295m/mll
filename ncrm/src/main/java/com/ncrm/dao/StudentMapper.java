@@ -1,8 +1,11 @@
 package com.ncrm.dao;
 
+import java.util.List;
+
 import com.ncrm.entity.Student;
 
 public interface StudentMapper {
+	
     int deleteByPrimaryKey(Integer id);
 
     int insert(Student record);
@@ -14,4 +17,6 @@ public interface StudentMapper {
     int updateByPrimaryKeySelective(Student record);
 
     int updateByPrimaryKey(Student record);
+    
+    List<Student> allStu();
 }

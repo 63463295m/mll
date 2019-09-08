@@ -174,4 +174,12 @@
       classId = #{classId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="allStu" resultType="Student">
+  	select 
+    <include refid="Base_Column_List" />
+    from student
+  </select>
+  
+  
 </mapper>
