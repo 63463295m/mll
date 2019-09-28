@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.annotation.BussinessLog;
 import com.ncrm.entity.Login;
 import com.ncrm.service.LoginService;
 
@@ -24,7 +25,7 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-
+	@BussinessLog
 	@RequestMapping("/index")
 	public String index(Model m){
 		
@@ -34,10 +35,10 @@ public class LoginController {
 		return "index";
 	}
 
+	@BussinessLog(value = "LoginController.get1()")
 	@RequestMapping("/allLogin")
 	@ResponseBody
 	public Object get1(Model m){
-		System.out.printf("11111");
 
 		return loginService.allLogin();
 	}
