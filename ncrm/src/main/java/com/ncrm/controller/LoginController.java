@@ -15,7 +15,7 @@ import com.ncrm.service.LoginService;
 @RequestMapping(value="/loginController")
 public class LoginController {
 	
-/* 
+/*1
  *	
  *
  *	local - master - login - 6
